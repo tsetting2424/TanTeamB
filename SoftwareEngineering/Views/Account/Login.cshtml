@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Log in";
+}
+
+@section Header {
+    <h1>@ViewBag.Title</h1>
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+
+    <ul data-role="listview" data-inset="true" data-theme="e">
+        <li data-role="list-divider">Login Credentials</li>
+
+        <li data-role="fieldcontain">
+            <label for="UserName">UserName:</label>
+            <input id="UserName" name="UserName"/>           
+        </li>
+
+        <li data-role="fieldcontain">
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" />           
+        </li>
+
+        <li data-role="fieldcontain">
+            <input type="button" id="submitLogin" value="Log in"/>
+        </li>
+    </ul>
+    
+   <ul data-role="listview" data-inset="true" data-theme="e"> 
+    <li>
+    @Html.ActionLink("Manager", "ManagerHome", "Manager")
+    </li>
+    </ul>
+    
+    
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.mobile.orientationChangeEnabled = true
+        $('#submitLogin').click(function () {
+
+            var User = $('#UserName').val();
+            var password = $('#Password').val();
+            alert("Got passed click");
+            $.ajax({
+                url: '@Url.Action("LoginAccount", "Account")',
+                /*data: { 'UserName': UserName, 'Password': password },
+                type: "post",
+                cache: false,
+                success: function () {
+                    alert("worked");
+                },
+                error: function () {
+                    alert("Failed");
+                }*/
+            });
+
+
+            /*if (EB != null) {
+
+
+            var eventArgs = new Object();
+            eventArgs.userName = $('#UserName').val();
+            eventArgs.password = $('#Password').val();
+
+            //raises the submit payment event
+            EB.RaiseEvent("CheckLogin", null, eventArgs);
+            }*/
+
+
+
+
+        });
+
+        /* EB.SubscribeEvent("CheckLogin", "checking user", checkLogin)
+
+        function checkLogin(sender, args) {
+        if (EB != undefined || EB != null) {
+        var eventArgs = new Object();
+        eventArgs.URL = "http://localhost:17461/Account/LoginAccount?UserName=" + args.userName + "&Password=" + args.password;
+        eventArgs.Container = "main";
+
+        //raises the get function that is on the consumer side that receives the html from the view and populates it in the caontainer sent to it
+        EB.RaiseEvent("get", this, eventArgs);
+        }
+        }*/
+
+    });
+
+
+</script>

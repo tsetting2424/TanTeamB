@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Manager";
+}
+
+@section Header {
+    <h1>@ViewBag.Title</h1>
+}
+
+@using (Html.BeginForm())
+{
+    <div data-role="header" data-inset="true" data-theme="e"> 
+    @Html.ActionLink("Logout", "Login","Account", null, new { data_icon = "delete" })
+	<h1>Manager</h1> 
+    </div> 
+    
+    <ul data-role="listview" data-inset="true" data-theme="e">
+        <li data-role="list-divider">Manager Options</li>
+
+        <li data-role="fieldcontain"> 
+            @Html.ActionLink("Create User", "CreateAccount", "Manager")
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.ActionLink("Update User", "UpdateAccounts", "Manager")
+        </li>
+
+        <li data-role="fieldcontain">   
+            @Html.ActionLink("Reports", "reports", "Manager")
+        </li>
+     </ul> 
+}
+
+

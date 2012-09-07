@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "reports";
+}
+
+@section Header {
+    <h1>@ViewBag.Title</h1>
+}
+
+@using (Html.BeginForm())
+{
+    <div data-role="header" data-theme="e">
+    @Html.ActionLink("Back", "ManagerHome","Manager", null, new { data_icon = "back" })
+	<h1>Reports</h1> 
+    </div> 
+    
+    <br />
+    <div data-role="collapsible">
+   <h3>Search for users</h3>
+ 	<ul id='Userlist' data-role='listview' data-filter='true' data-inset='false'>
+        <li id='a1'>
+            <input type="checkbox" name="checkbox-1" id="checkbox-1" data-mini="true" />
+		    <label for="checkbox-1">Tony</label>
+        </li>
+
+        <li id='a2'>
+            <input type="checkbox" name="checkbox-2" id="checkbox-2" data-mini="true" />
+		    <label for="checkbox-2">Jim</label>
+        </li>
+
+        <li id='a3'>
+            <input type="checkbox" name="checkbox-3" id="checkbox-3" data-mini="true" />
+		    <label for="checkbox-3">Ron</label>
+        </li>
+
+        <li id='a4'>
+            <input type="checkbox" name="checkbox-4" id="checkbox-4" data-mini="true" />
+		    <label for="checkbox-4">Greg</label>
+        </li>
+
+        <li id='a5' data-mini="true">
+            <input type="checkbox" name="checkbox-5" id="checkbox-5" data-mini="true" />
+		    <label for="checkbox-5">Brendon</label>
+        </li>
+
+
+    </ul>
+ </div>
+    
+    <div id="DateContainer" data-role="fieldcontain">
+    <label for="DateContainer">Create a Report Every:</label>
+<fieldset data-role="controlgroup" data-type="horizontal">
+	
+    
+    
+<select name="NumberOfYears" id="NumberOfYears">
+	<option value="0">Years</option>
+    <option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+
+
+<select name="NumberOfMonths" id="NumberOfMonths">
+	<option value="0">Months</option>
+    <option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+</select>
+
+<select name="NumberOfMonths" id="NumberOfWeeks">
+	<option value="0" >Weeks</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>	
+</select>
+
+<select name="NumberOfDays" id="NumberOfDays">
+	<option value="0">Days</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+</fieldset>
+</div>
+    
+    <label for="AdditionalInfoList">Select additonal information to be collected</label>
+    <ul id='AdditionalInfoList' data-role='listview' data-inset='true'>
+        <li>
+            <input type="checkbox" name="getTasksDone" id="getTasksDone" data-mini="true" />
+		    <label for="getTasksDone">Tasks Completed</label>
+        </li>
+
+        <li>
+            <input type="checkbox" name="getStepsDone" id="getStepsDone" data-mini="true" />
+		    <label for="getStepsDone">Steps Completed</label>
+        </li>
+
+        <li>
+            <input type="checkbox" name="getIp" id="getIp" data-mini="true" />
+		    <label for="getIp">IP Adress</label>
+        </li>
+
+
+    </ul>
+
+}
