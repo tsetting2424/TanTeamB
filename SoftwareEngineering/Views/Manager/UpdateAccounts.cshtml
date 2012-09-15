@@ -9,14 +9,8 @@
 
 @using (Html.BeginForm())
 {
-
-    <div data-role="header" data-inset="true" data-theme="e"> 
-    @Html.ActionLink("Back", "ManagerHome","Manager", null, new { data_icon = "back" })
-	<h1>Update User</h1> 
-    </div> 
-    
-    
-    <div data-role="collapsible"  data-content-theme="c">
+ 
+    <div data-role="collapsible">
         <h3>Search and Select a User</h3>
         <ul id='Userlist' data-role='listview' data-filter='true' data-inset='true'>
             <li id='a1'>
@@ -26,7 +20,7 @@
     </ul>
     </div>
     
-    <ul data-role="listview" data-inset="true" data-theme="e">
+    <ul data-role="listview" data-inset="true">
         <li data-role="list-divider">User Information</li>
 
         <li data-role="fieldcontain">
@@ -70,3 +64,52 @@
     </ul>
         
 }
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+    var menuStatus;
+ 
+    $("a.showMenu").click(function(){
+        if(menuStatus != true){
+        $(".ui-page-active").animate({
+            marginLeft: "165px",
+          }, 300, function(){menuStatus = true});
+          return false;
+          } else {
+            $(".ui-page-active").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = false});
+            return false;
+          }
+    });
+ /*
+    $('.pages').live("swipeleft", function(){
+        if (menuStatus){
+        $(".ui-page-active").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = false});
+          }
+    });
+ 
+    $('.pages').live("swiperight", function(){
+        if (!menuStatus){
+        $(".ui-page-active").animate({
+            marginLeft: "165px",
+}, 300, function(){menuStatus = true});
+          }
+    });
+ 
+    $("#menu li a").click(function(){
+        var p = $(this).parent();
+        if($(p).hasClass('active')){
+            $("#menu li").removeClass('active');
+        } else {
+            $("#menu li").removeClass('active');
+            $(p).addClass('active');
+        }
+    });
+    */
+});
+
+</script>

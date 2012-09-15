@@ -31,21 +31,27 @@ namespace SoftwareEngineering.Controllers
         }
 
         
-        [HttpPost]
+      
         public ActionResult LoginAccount(string UserName, string Password)
         {
             
             LoginModel model = new LoginModel();
             model.UserName = UserName;
             model.Password = Password;
-
-            if (model.UserName == "tony")
+            try
             {
-                return RedirectToAction("Index", "Home");
+                if (model.UserName == "tony")
+                {
+                    return RedirectToAction("CreateAccount", "Manager");
+                }
+                else
+                {
+                    return View("LoginAccount", model);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                return PartialView("LoginAccount", model);
+                return View("LoginAccount", model);
             }
         }
 

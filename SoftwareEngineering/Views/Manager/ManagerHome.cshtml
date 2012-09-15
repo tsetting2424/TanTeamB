@@ -8,12 +8,9 @@
 
 @using (Html.BeginForm())
 {
-    <div data-role="header" data-inset="true" data-theme="e"> 
-    @Html.ActionLink("Logout", "Login","Account", null, new { data_icon = "delete" })
-	<h1>Manager</h1> 
-    </div> 
+
     
-    <ul data-role="listview" data-inset="true" data-theme="e">
+    <ul data-role="listview" data-inset="true" >
         <li data-role="list-divider">Manager Options</li>
 
         <li data-role="fieldcontain"> 
@@ -28,6 +25,36 @@
             @Html.ActionLink("Reports", "reports", "Manager")
         </li>
      </ul> 
+    
+    <div id="ManagerContent">
+    </div>
 }
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.mobile.orientationChangeEnabled = true
+       /* $('#CreateUserBtn').click(function () {
+            var User = $('CreateUserBtn').val();
+            var passingData = '{UserName:"' + User + '"}';
+            alert(passingData);
+            $.ajax({
+                type: "POST",
+                dataType: 'html',
+                contentType: 'application/json',
+                url: '@Url.Action("CreateAccount", "Manager")',
+                data: passingData,
+                cache: false,
+                success: function (response) {
+                    alert("worked " + response);
+                    $("#ManagerContent").html(response);
+                },
+                error: function (request, status, error) {
+                    alert("failed " + request.responseText);
+                    alert(error);
+                }
+            });
+        });*/
+    });
 
+
+</script>

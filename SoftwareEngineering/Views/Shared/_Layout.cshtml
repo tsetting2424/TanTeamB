@@ -12,37 +12,48 @@
         @Scripts.Render("~/bundles/jqueryval")
         @Scripts.Render("~/bundles/jquery", "~/bundles/jquerymobile")
         @RenderSection("scripts", required: false)
-
-        <script type="text/javascript">
-
-            function getPartialResultFromExternal(sender, eventargs) {
-                alert(eventargs.URL + "," + eventargs.Container);
-                $.get('/Home/GetView', { URL: eventargs.URL }, function (data) {
-                    alert(data);
-                    $('#' + eventargs.Container).html(data);
-                    if (eventargs.Callback) {
-                        eventargs.Callback(sender, eventargs);
-                    }
-                });
-            }
-                
-              EB.SubscribeEvent("get", "page", getPartialResultFromExternal);
+        <link href="../../Content/CustomThemes/custom1.css" rel="stylesheet" type="text/css" />
+        <link href="../../Content/CustomThemes/custom1.min.css" rel="stylesheet" type="text/css" />
 
        </script>
     </head>
-    <body>
-            <div data-role="header">
-                @if (IsSectionDefined("Header")) {
+    <body id="menu">
+  
+            <div data-role="navbar">
+            <h3>Manager Options</h3>
+                <ul data-role="listview" id="menuList" data-inset="true" >
+
+                    <li data-role="fieldcontain"> 
+                    <a href="@Url.Action("CreateAccount","Manager")" data-transition="flow">Create Account</a>
+                    </li>
+
+                    <li data-role="fieldcontain">
+                        <a href="@Url.Action("UpdateAccounts","Manager")" data-transition="flow">Update Account</a>
+                    </li>
+
+                    <li data-role="fieldcontain">  
+                        <a href="@Url.Action("reports","Manager")" data-transition="flow">Reports</a> 
+                    </li>
+                </ul> 
+            </div>
+
+        <div data-role="page" class="pages" id="home">
+    <div data-role="header" data-position="fixed" data-theme="c">
+    @if (IsSectionDefined("Header")) {
                     @RenderSection("Header")
-                } 
-            </div>
-        <div  data-role="page" data-theme="e">
-            <div id="main" data-role="content">
-                @RenderBody()
-                
-            </div>
-        </div>
+                }
+    <a href="#"class="showMenu">Menu</a>
+     <a href="@Url.Action("Login","Account")" data-transition="flow" data-icon="delete">Logout</a>
+
+    </div>
+    <div data-role="content">
+        @RenderBody()
+    </div>
+</div>
 
        
     </body>
 </html>
+
+<script type="text/javascript">
+</script>

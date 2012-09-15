@@ -9,12 +9,7 @@
 
 @using (Html.BeginForm())
 {
-    <div data-role="header" data-theme="e">
-    @Html.ActionLink("Back", "ManagerHome","Manager", null, new { data_icon = "back" })
-	<h1>Reports</h1> 
-    </div> 
-    
-    <br />
+
     <div data-role="collapsible">
    <h3>Search for users</h3>
  	<ul id='Userlist' data-role='listview' data-filter='true' data-inset='false'>
@@ -50,7 +45,7 @@
     <div id="DateContainer" data-role="fieldcontain">
     <label for="DateContainer">Create a Report Every:</label>
 <fieldset data-role="controlgroup" data-type="horizontal">
-	
+
     
     
 <select name="NumberOfYears" id="NumberOfYears">
@@ -118,3 +113,51 @@
     </ul>
 
 }
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+    var menuStatus;
+ 
+    $("a.showMenu").click(function(){
+        if(menuStatus != true){
+        $(".ui-page-active").animate({
+            marginLeft: "165px",
+          }, 300, function(){menuStatus = true});
+          return false;
+          } else {
+            $(".ui-page-active").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = false});
+            return false;
+          }
+    });
+ 
+    $('.pages').live("swipeleft", function(){
+        if (menuStatus){
+        $(".ui-page-active").animate({
+            marginLeft: "0px",
+          }, 300, function(){menuStatus = false});
+          }
+    });
+ 
+    $('.pages').live("swiperight", function(){
+        if (!menuStatus){
+        $(".ui-page-active").animate({
+            marginLeft: "165px",
+}, 300, function(){menuStatus = true});
+          }
+    });
+ 
+    $("#menu li a").click(function(){
+        var p = $(this).parent();
+        if($(p).hasClass('active')){
+            $("#menu li").removeClass('active');
+        } else {
+            $("#menu li").removeClass('active');
+            $(p).addClass('active');
+        }
+    });
+});
+
+</script>
