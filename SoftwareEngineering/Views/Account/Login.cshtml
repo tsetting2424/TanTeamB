@@ -12,7 +12,7 @@
 {
     @Html.ValidationSummary()
 
-    <ul data-role="listview" data-inset="true">
+    <ul data-role="listview" data-inset="true" data-inline="true">
         <li data-role="list-divider">Login</li>
 
         <li data-role="fieldcontain">
@@ -25,8 +25,8 @@
             <input type="password" id="Password" name="Password"/>           
         </li>
 
-        <li data-role="fieldcontain">
-            <input type="submit" id="submitLogin" value="Log in"/>
+        <li data-role="fieldcontain" data-inline="true">
+            <input type="submit"  id="submitLogin" value="Log in"/>
         </li>
     </ul>
 } 
@@ -34,6 +34,10 @@
    <ul data-role="listview" data-inset="true"> 
     <li>
     @Html.ActionLink("Manager", "CreateAccount", "Manager")
+    </li>
+
+    <li>
+    <a href="@Url.Action("UpdateTasks","Supervisor")" data-transition="flow">Supervisor</a>
     </li>
     </ul>
     

@@ -1,0 +1,153 @@
+﻿@Scripts.Render("~/bundles/jqueryui")
+
+
+@{
+    ViewBag.Title = "Update Accounts";
+}
+
+@section Header {
+    <h1>@ViewBag.Title</h1>
+}
+
+
+@using (Html.BeginForm())
+{
+ 
+    <div data-role="collapsible">
+        <h3>Search and Select a Task</h3>
+        <ul id='Tasklist' data-role='listview' data-filter='true' data-inset='true'>
+            <li id='a7'>
+                <input type="radio" id="ChosenTask" data-mini="true"/>
+         	    <label for="ChosenTask">Task</label>
+           </li>
+    </ul>
+    </div>
+    
+    <div data-role="collapsible">
+    <h3>Search for users</h3>
+ 	<ul id='Userlist' data-role='listview' data-filter='true' data-inset='false'>
+        <li id='a1'>
+            <input type="checkbox" name="checkbox-1" id="checkbox-1" data-mini="true" />
+		    <label for="checkbox-1">Tony</label>
+        </li>
+
+        <li id='a2'>
+            <input type="checkbox" name="checkbox-2" id="checkbox-2" data-mini="true" />
+		    <label for="checkbox-2">Jim</label>
+        </li>
+
+        <li id='a3'>
+            <input type="checkbox" name="checkbox-3" id="checkbox-3" data-mini="true" />
+		    <label for="checkbox-3">Ron</label>
+        </li>
+
+        <li id='a4'>
+            <input type="checkbox" name="checkbox-4" id="checkbox-4" data-mini="true" />
+		    <label for="checkbox-4">Greg</label>
+        </li>
+
+        <li id='a5'>
+            <input type="checkbox" name="checkbox-5" id="checkbox-5" data-mini="true" />
+		    <label for="checkbox-5">Brendon</label>
+        </li>
+
+
+    </ul>
+ </div>
+    <br />
+    <div data-theme="b" id="Steps">
+        <h3>Steps
+        <input id="addSteps" data-role="button" class="addSteps" value="+" type="button" data-inline="true" data-iconpos="notext" data-icon="add" data-mini="true"/>
+         <label for="step">Add new step:</label>
+         <textarea data-inline="true" cols="10" rows="2" id="step"></textarea>
+         
+        </h3>
+        <ul id='StepList' data-role='listview' data-theme="b" data-split-icon="delete" class="StepsList">            
+        </ul>   
+    </div>  
+    <br />
+    <br />
+    
+    
+    
+        <div data-theme="b" id="DetailedSteps">
+        <h3>Detailed Steps
+        
+        <input id="addDSteps" class="addSteps" data-role="button" type="button" value="+" data-inline="true" data-iconpos="notext" data-mini="true" data-icon="plus"/>
+        <label for="Dstep">Add new step:</label>
+        <textarea data-inline="true" cols="10" rows="2" id="Dstep"></textarea>
+        
+        </h3>
+        <ul id='DStepList' data-role='listview' data-theme="b" data-split-icon="delete" class="StepList">            
+        </ul>   
+    </div>  
+    <br />
+    
+   <div data-role="footer"> 
+	<h4>Footer content</h4> 
+    </div> 
+     
+     
+}
+
+<script type="text/javascript">
+
+    $("#addSteps").removeClass();
+
+
+    $(document).bind('pageinit', function () {
+        $("#StepList").sortable();
+        $("#StepList").disableSelection();
+        $("#StepList").bind("sortstop", function(event, ui) {
+        $('#StepList').listview('refresh');
+        });
+    });
+
+    $(document).ready(function () {
+        var i = 1;
+        var t = 1;
+
+
+        $("#addSteps").click(function () {
+            if ($('#step').val() != '') {
+                $('#StepList').append('<li><a>' + $('#step').val() + '</a><a class="stepbutton"></a></li>').trigger('create');
+                $("#StepList").listview('refresh');
+                i = i + 1;
+                $('#step').val('');
+            }
+            else {
+                alert("Please add a new step for the selected task");
+            }
+
+        });
+
+
+
+        $("#addDSteps").click(function () {
+            if ($("#Dstep").val() == '') {
+                alert("Please enter a detailed step for the selected task");
+            }
+            else {
+                $('#DStepList').append('<li><a>' + $("#Dstep").val() + '</a><a data-inline="true" class="Dstepbutton"></a></li>').trigger('create');
+                $("#DStepList").listview('refresh');
+                t = t + 1;
+                $("#Dstep").val('');
+            }
+        });
+
+
+
+
+        $('.stepbutton').live('click', function () {
+            $(this).parent().remove();
+            $('#StepList').listview('refresh');
+        });
+
+        $('.Dstepbutton').live('click', function () {
+            $(this).parent().remove();
+            $('#DStepList').listview('refresh');
+        });
+
+    });
+</script>
+

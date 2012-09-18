@@ -36,6 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.9\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -46,6 +49,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -61,9 +67,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
       <Private>True</Private>
@@ -92,9 +95,6 @@
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Providers">
-      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -129,6 +129,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\SupervisorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,25 +137,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\CustomThemes\custom1.css" />
-    <Content Include="Content\CustomThemes\custom1.min.css" />
-    <Content Include="Content\CustomThemes\images\ajax-loader.png" />
-    <Content Include="Content\CustomThemes\images\icons-18-black.png" />
-    <Content Include="Content\CustomThemes\images\icons-18-white.png" />
-    <Content Include="Content\CustomThemes\images\icons-36-black.png" />
-    <Content Include="Content\CustomThemes\images\icons-36-white.png" />
+    <Content Include="Content\CustomeThemes2\CustomeTheme2.css" />
+    <Content Include="Content\CustomeThemes2\CustomeTheme2.min.css" />
+    <Content Include="Content\CustomeThemes2\images\ajax-loader.gif" />
+    <Content Include="Content\CustomeThemes2\images\icons-18-black.png" />
+    <Content Include="Content\CustomeThemes2\images\icons-18-white.png" />
+    <Content Include="Content\CustomeThemes2\images\icons-36-black.png" />
+    <Content Include="Content\CustomeThemes2\images\icons-36-white.png" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\ajax-loader.png" />
     <Content Include="Content\images\icons-18-black.png" />
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
-    <Content Include="Content\jquery.mobile-1.1.0.css" />
-    <Content Include="Content\jquery.mobile-1.1.0.min.css" />
-    <Content Include="Content\jquery.mobile.structure-1.1.0.css" />
-    <Content Include="Content\jquery.mobile.structure-1.1.0.min.css" />
-    <Content Include="Content\jquery.mobile.theme-1.1.0.css" />
-    <Content Include="Content\jquery.mobile.theme-1.1.0.min.css" />
+    <Content Include="Content\jquery.mobile-1.1.1.css" />
+    <Content Include="Content\jquery.mobile-1.1.1.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.1.1.css" />
+    <Content Include="Content\jquery.mobile.structure-1.1.1.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.1.1.css" />
+    <Content Include="Content\jquery.mobile.theme-1.1.1.min.css" />
     <Content Include="Content\themes\base\images\ajax-loader.gif" />
     <Content Include="Content\themes\base\images\icons-18-black.png" />
     <Content Include="Content\themes\base\images\icons-18-white.png" />
@@ -220,13 +221,13 @@
     <Content Include="Global.asax" />
     <Content Include="Mabye.js" />
     <Content Include="Scripts\EventBroker.js" />
-    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.7.1.js" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
-    <Content Include="Scripts\jquery.mobile-1.1.0.js" />
-    <Content Include="Scripts\jquery.mobile-1.1.0.min.js" />
+    <Content Include="Scripts\jquery-1.8.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.1.js" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.1.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.1.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -236,7 +237,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
-    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\TouchPunch.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -284,6 +286,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supervisor\CreateTasks.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supervisor\UpdateTasks.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supervisor\UserTasks.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

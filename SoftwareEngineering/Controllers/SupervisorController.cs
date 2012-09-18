@@ -11,10 +11,20 @@ namespace SoftwareEngineering.Controllers
         //
         // GET: /Supervisor/
 
-        public ActionResult Index()
+        public ActionResult CreateTasks()
         {
             return View();
         }
 
+        public ActionResult UpdateTasks()
+        {
+            return View();
+        }
+
+        public ActionResult UserTasks()
+        {
+            return View();
+        }
+        
     }
 }
