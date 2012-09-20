@@ -1,9 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>   
-        <script src="../../Scripts/EventBroker.js" type="text/javascript"></script>
-        
-
+    <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title</title>
         <meta name="viewport" content="width=device-width" />
@@ -13,16 +10,26 @@
         @Scripts.Render("~/bundles/jquery", "~/bundles/jquerymobile")
         @RenderSection("scripts", required: false)
         <link href="../../Content/CustomeThemes2/CustomeTheme2.min.css" rel="stylesheet" type="text/css" />
+        <script src="../../Scripts/TouchPunch.js" type="text/javascript"></script>
+        @Scripts.Render("~/bundles/jqueryui")
+
+
        </script>
     </head>
     <body id="menu">
- 
+
+
         <div data-role="page" class="pages" id="home">
-    <div data-role="header" data-position="fixed" data-theme="b">
+    <div data-role="header" data-position="fixed" id="head" data-theme="b">
     @if (IsSectionDefined("Header")) {
                     @RenderSection("Header")
                 }
-    </div>
+            
+            <a href="@Url.Action("Login", "Account")"  data-icon="delete" data-transition="flow">Logout</a>
+			
+        </div>
+
+    
     <div data-role="content">
         @RenderBody()
     </div>
@@ -33,7 +40,5 @@
 </html>
 
 <script type="text/javascript">
-    jQuery(document).ready(function () {
-    });
 
 </script>

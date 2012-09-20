@@ -11,9 +11,8 @@
 
 /* A
 -----------------------------------------------------------------------------------------------------------*/
-.delete-buttons{
-    background-image: url("app-icon-email.png") !important;/*I added the !important, I found that this rule was being overwritten*/
-}
+
+
 
 .ui-bar-a {
 	border: 1px solid #B3B3B3 /*{a-bar-border}*/;

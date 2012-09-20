@@ -5,6 +5,7 @@
 
 @section Header {
     <h1>@ViewBag.Title</h1>
+    <a href="@Url.Action("ManagerHome", "Manager")"  data-icon="home" data-transition="flow">Home</a>
 }
 
 @using (Html.BeginForm())
@@ -112,14 +113,14 @@
         </li>
 
         <li data-role="fieldcontain">
-            <input type="button" data-inline="true"id="submitUpdate" value="Save"/>
+            <input type="button"  data-role="button" id="submitUpdate" value="Save"/>
         </li>
     
-</ul>
+</ul> 
         
 }
 <script type="text/javascript">
-    $(document).ready(function () {
+ /*   $(document).ready(function () {
         $(document).bind('mobileinit', function () {
             $.mobile.selectmenu.prototype.options.nativeMenu = false;
         });
@@ -165,5 +166,5 @@
             $(p).addClass('active');
         }
     });
-    });
+    })*/
 </script>

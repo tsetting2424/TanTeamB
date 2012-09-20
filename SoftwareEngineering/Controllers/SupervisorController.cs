@@ -25,6 +25,11 @@ namespace SoftwareEngineering.Controllers
         {
             return View();
         }
+
+        public ActionResult SupervisorHome()
+        {
+            return View();
+        }
         
     }
 }

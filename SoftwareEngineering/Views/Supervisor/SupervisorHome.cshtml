@@ -1,0 +1,45 @@
+﻿<link href="../../Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Supervisor";
+}
+
+@section Header {
+    <h1>@ViewBag.Title</h1>
+
+}
+
+@using (Html.BeginForm())
+{
+       <p class="manager">Welcome Supervisor, here you can create new Tasks ect.</p>
+        <div data-role="controlgroup" data-type="horizontal"  class="ManagerMenu">
+       
+            <a href="@Url.Action("CreateTasks", "Supervisor")" id="CreateAcct" data-transition="flow">
+                <img src="../../Content/images/task.png" />
+         </a>
+        
+        
+        <a href="@Url.Action("UpdateTasks", "Supervisor")" data-transition="flow">
+            <img src="../../Content/images/Task%20Report%20Regular_128%20(1).png" />
+            </a>
+      
+        
+        <a href="@Url.Action("UserTasks", "Supervisor")" id="ReportsPage" data-transition="flow">
+            <img src="../../Content/images/edit_user.png" />
+        </a> 
+    </div>
+    
+   
+    
+    <div id="ManagerContent">
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.mobile.orientationChangeEnabled = true
+
+
+    });
+
+
+</script>

@@ -1,17 +1,95 @@
-﻿@{
-    Layout = null;
+﻿@Scripts.Render("~/bundles/jqueryui")
+
+
+@{
+    ViewBag.Title = "User Tasks";
+   
 }
 
-<!DOCTYPE html>
+@section Header {
+    <h1>@ViewBag.Title</h1>
+     <a href="@Url.Action("SupervisorHome", "Supervisor")"  data-icon="home" data-transition="flow">Home</a>
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
+
+@using (Html.BeginForm())
+{
     
-    </div>
-</body>
-</html>
+    <div data-role="collapsible">
+    <h3>Select Users</h3>
+ 	<ul id='Userlist' data-role='listview' data-filter='true' data-inset='false'>
+        <li id='a1'>
+            <input type="radio" name="radio-1" id="radio-1" data-mini="true" />
+		    <label for="radio-1">Tony</label>
+        </li>
+
+        <li id='a2'>
+            <input type="radio" name="radio-2" id="radio-2" data-mini="true" />
+		    <label for="radio-2">Jim</label>
+        </li>
+
+        <li id='a3'>
+            <input type="radio" name="radio-3" id="radio-3" data-mini="true" />
+		    <label for="radio-3">Ron</label>
+        </li>
+
+        <li id='a4'>
+            <input type="radio" name="radio-4" id="radio-4" data-mini="true" />
+		    <label for="radio-4">Greg</label>
+        </li>
+
+        <li id='a5'>
+            <input type="radio" name="radio-5" id="radio-5" data-mini="true" />
+		    <label for="radio-5">Brendon</label>
+        </li>
+
+
+    </ul>
+ </div>
+    <br />
+    <div data-theme="b" id="currentTasks">
+        <h3>Current Tasks</h3>
+        <ul id='currentTaskList' data-role='listview' data-theme="b" data-split-icon="check" class="currentTaskList">  
+            <li>Task 1</li> 
+            <li>Task 2</li>
+            <li>Task 3</li>         
+        </ul>   
+    </div>  
+    <br />
+    <br />
+    
+    
+    
+    <div data-theme="b" id="availableTasks">
+      <h3>Available Tasks</h3>
+      <ul id='availableTaskList' data-role='listview' data-theme="b" data-split-icon="check" class="availableTaskList">  
+        <li>Task a</li>
+        <li>Task b</li>
+        <li>Task c</li>          
+      </ul>   
+    </div> 
+    <br />
+    
+   <div data-role="footer"> 
+	<h4>Footer content</h4> 
+    </div> 
+     
+     
+}
+
+
+
+<script>
+
+    $(function () {
+        $("#currentTaskList").selectable();
+    });
+
+
+    $(function () {
+        $("#availableTaskList").selectable();
+    });
+
+
+
+</script>

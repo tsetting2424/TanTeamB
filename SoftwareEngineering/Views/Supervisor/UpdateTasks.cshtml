@@ -1,14 +1,18 @@
 ﻿@Scripts.Render("~/bundles/jqueryui")
 
 
+
 @{
-    ViewBag.Title = "Update Accounts";
+    ViewBag.Title = "Update Tasks";
+    
 }
 
 @section Header {
     <h1>@ViewBag.Title</h1>
+    <a href="@Url.Action("SupervisorHome", "Supervisor")"  data-icon="home" data-transition="flow">Home</a>
+    
 }
-
+  
 
 @using (Html.BeginForm())
 {

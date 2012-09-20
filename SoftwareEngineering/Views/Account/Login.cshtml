@@ -1,4 +1,5 @@
-﻿
+﻿<link href="../../Content/CustomeThemes2/CustomeTheme2.css" rel="stylesheet" type="text/css" />
+
 @{
     ViewBag.Title = "Log in";
 }
@@ -33,11 +34,11 @@
 
    <ul data-role="listview" data-inset="true"> 
     <li>
-    @Html.ActionLink("Manager", "CreateAccount", "Manager")
+    <a href="@Url.Action("ManagerHome","Manager")" data-transition="flow">Manager</a>
     </li>
 
     <li>
-    <a href="@Url.Action("UpdateTasks","Supervisor")" data-transition="flow">Supervisor</a>
+    <a href="@Url.Action("SupervisorHome","Supervisor")" data-transition="flow">Supervisor</a>
     </li>
     </ul>
     
