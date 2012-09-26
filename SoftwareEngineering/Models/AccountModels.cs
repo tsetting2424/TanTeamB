@@ -19,10 +19,5 @@ namespace SoftwareEngineering.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
     }
-
-    public class GenericViewModel
-    {
-        public string DisplayString { get; set; }
-        
-    }
+ 
 }

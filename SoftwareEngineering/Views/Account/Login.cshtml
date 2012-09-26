@@ -1,44 +1,48 @@
 ﻿<link href="../../Content/CustomeThemes2/CustomeTheme2.css" rel="stylesheet" type="text/css" />
 
+
 @{
     ViewBag.Title = "Log in";
 }
 
 @section Header {
     <h1>@ViewBag.Title</h1>
+    
 }
-
 
 @using (Html.BeginForm("LoginAccount", "Account", FormMethod.Post))
 {
+    
     @Html.ValidationSummary()
-
+    <fieldset>
     <ul data-role="listview" data-inset="true" data-inline="true">
         <li data-role="list-divider">Login</li>
 
         <li data-role="fieldcontain">
-            <label for="UserName">UserName:</label>
-            <input id="UserName" name="UserName"/>           
+          <label for="UserName">User Name:</label>
+            <input required="true" id="UserName" name="UserName"/>            
         </li>
 
         <li data-role="fieldcontain">
             <label for="Password">Password:</label>
-            <input type="password" id="Password" name="Password"/>           
+            <input type="password" required="true" id="Password" name="Password"/>           
         </li>
 
         <li data-role="fieldcontain" data-inline="true">
-            <input type="submit"  id="submitLogin" value="Log in"/>
+        <label for="Password"></label>
+        <input type="submit" class="buttons" id="submitLogin" value="Log in"/>
         </li>
     </ul>
+    </fieldset>
 } 
 
    <ul data-role="listview" data-inset="true"> 
     <li>
-    <a href="@Url.Action("ManagerHome","Manager")" data-transition="flow">Manager</a>
+    <a href="@Url.Action("ManagerHome", "Manager")" data-transition="flow">Manager</a>
     </li>
 
     <li>
-    <a href="@Url.Action("SupervisorHome","Supervisor")" data-transition="flow">Supervisor</a>
+    <a href="@Url.Action("SupervisorHome", "Supervisor")" data-transition="flow">Supervisor</a>
     </li>
     </ul>
     

@@ -18,102 +18,41 @@
  
 	<li data-role="fieldcontain">
             <label for="FirstName">First Name:</label>
-            <input id="FirstName" name="FirstName" maxlength="15" />           
-        </li>
-
-        <li data-role="fieldcontain">
-            <label for="MI">Middile Initial:</label>
-            <input  id="MI" />           
+            <input id="FirstName" required="true" name="FirstName" maxlength="15" />           
         </li>
 
         <li data-role="fieldcontain">
             <label for="LastName">Last Name:</label>
-            <input  id="LastName" />           
+            <input  id="LastName" required="true" />           
         </li>
 
         <li data-role="fieldcontain">
-            <label for="Address">Address:</label>
-            <input id="Address" name="Address"/>           
+            <label for="UserName">User Name:</label>
+            <input id="UserName" name="UserName" required="true"/>           
         </li>
 
         <li data-role="fieldcontain">
-            <label for="Address2">Address:</label>
-            <input id="Address2" name="Address2"/>           
+            <label for="Password">Password:</label>
+            <input id="Password" name="Password" required="true"/>           
         </li>
 
         <li data-role="fieldcontain">
-            <label for="City">City:</label>
-            <input id="City" name="City"/>           
+            <label for="Email">E-Mail:</label>
+            <input id="Email" name="Email" maxlength="15" required="true"/>           
         </li>
 
         <li data-role="fieldcontain">
-            <fieldset data-role="controlgroup">
-	        <legend>State:</legend>
-            <select name="SState_Option" id="SState_Option" size="1">
-            <option value="AA">AA</option>
-            <option value="AP">AP</option>
-            <option value="AE">AE</option>
-            <option value="AK" selected="selected">ALASKA</option>
-            <option value="AL">ALABAMA</option>
-            <option value="AR">ARKANSAS</option>
-            <option value="AZ">ARIZONA</option>
-            <option value="CA">CALIFORNIA</option>
-            <option value="CO">COLORADO</option>
-            <option value="CT">CONNECTICUT</option>
-            <option value="DC">DISTRICT OF COLUMBIA</option>
-            <option value="DE">DELAWARE</option>
-            <option value="FL">FLORIDA</option>
-            <option value="GA">GEORGIA</option>
-            <option value="HI">HAWAII</option>
-            <option value="IA">IOWA</option>
-            <option value="ID">IDAHO</option>
-            <option value="IL">ILLINOIS</option>
-            <option value="IN">INDIANA</option>
-            <option value="KS">KANSAS</option>
-            <option value="KY">KENTUCKY</option>
-            <option value="LA">LOUISIANA</option>
-            <option value="MA">MASSACHUSETTS</option>
-            <option value="MD">MARYLAND</option>
-            <option value="ME">MAINE</option>
-            <option value="MI">MICHIGAN</option>
-            <option value="MN">MINNESOTA</option>
-            <option value="MO">MISSOURI</option>
-            <option value="MS">MISSISSIPPI</option>
-            <option value="MT">MONTANA</option>
-            <option value="NC">NORTH CAROLINA</option>
-            <option value="ND">NORTH DAKOTA</option>
-            <option value="NE">NEBRASKA</option>
-            <option value="NH">NEW HAMPSHIRE</option>
-            <option value="NJ">NEW JERSEY</option>
-            <option value="NM">NEW MEXICO</option>
-            <option value="NV">NEVADA</option>
-            <option value="NY">NEW YORK</option>
-            <option value="OH">OHIO</option>
-            <option value="OK">OKLAHOMA</option>
-            <option value="OR">OREGON</option>
-            <option value="PA">PENNSYLVANIA</option>
-            <option value="PR">PUERTO RICO</option>
-            <option value="RI">RHODE ISLAND</option>
-            <option value="SC">SOUTH CAROLINA</option>
-            <option value="SD">SOUTH DAKOTA</option>
-            <option value="TN">TENNESSEE</option>
-            <option value="TX">TEXAS</option>
-            <option value="UT">UTAH</option>
-            <option value="VA">VIRGINIA</option>
-            <option value="VT">VERMONT</option>
-            <option value="WA">WASHINGTON</option>
-            <option value="WI">WISCONSIN</option>
-            <option value="WV">WEST VIRGINIA</option>
-            <option value="WY">WYOMING</option></select>          
+            <label for="SecuirtyQuest">Security Question:</label>
+            <input id="SecuirtyQuest" name="SecuirtyQuest" required="true"/>           
         </li>
 
         <li data-role="fieldcontain">
-            <label for="ZipCode">Zip Code:</label>
-            <input id="ZipCode" name="ZipCode" style="width:85%"/>           
+            <label for="SecuirtyAns">Security Question Answer:</label>
+            <input id="SecuirtyAns" name="SecuirtyAns" required="true"/> 
         </li>
 
         <li data-role="fieldcontain">
-            <input type="button"  data-role="button" id="submitUpdate" value="Save"/>
+            <input type="button"  data-role="button" id="submitUpdate" value="Save" />
         </li>
     
 </ul> 

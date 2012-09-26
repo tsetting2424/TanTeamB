@@ -1,8 +1,13 @@
 ﻿
 @model SoftwareEngineering.Models.LoginModel
 
+@{
+    ViewBag.Title = "No User";
+}
+
 @section Header {
-    <h1>@ViewBag.Title = "Not a User"</h1>
+    <h1>@ViewBag.Title</h1>
+    <a href="@Url.Action("ManagerHome", "Manager")"  data-icon="home" data-transition="flow">Home</a>
 }
 
 <p> The User was not found please, Have Manager create an account for you and try again </p>
